@@ -7,9 +7,7 @@
   Github Repo: https://github.com/nisarhassan12/portfolio-template/
   My Website: https://nisar.dev
 
-  For business & inquires, contact me => syednisarhassan12@gmail.com
--->
-
+  
 <!--
   Follow the instructions written in comments to create your stunning portfolio
 -->
@@ -27,7 +25,7 @@
     Lucas Wan | A C++ Game Programming Student based in Huddersfield.
   </title>
 
-  <meta name="Description" content="I am University Student studying Computer Science with Games Programming. I am currently looking for a placement that will help me gain expeierience in the games industry." />
+  <meta name="Description" content="I am University Student studying Computer Science with Games Programming. I am currently looking for a placement that will help me gain experience in the games industry." />
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Lucas Wan, C++/C#, Java, Unreal, Unity" />
   <link rel="stylesheet" href="index.css" />
@@ -71,127 +69,43 @@
     <section class="work" id="work">
       <div class="row">
         <h2>My Work</h2>
-        <div class="work__boxes">
+        <p class="work__intro">
+          A selection of game and programming projects. Click a project to view the full case study, including demo media,
+          features, responsibilities, and what I learned.
+        </p>
 
-          <!-- Each div with the work__box class is a project. -->
+        <div class="project-grid" aria-label="Projects">
+          <button class="project-card" type="button" data-project="pong">
+            <img src="./images/project1Pong.gif" class="project-card__image" alt="PONG gameplay preview" />
+            <span class="project-card__tag">C++ / SFML</span>
+            <h3>PONG</h3>
+            <p>A polished Pong clone focused on collision detection, ball physics, and score UI.</p>
+            <span class="project-card__cta">View case study &rarr;</span>
+          </button>
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>PONG</h3>
-              <p>
-                A pong clone made using C++, SFML 3.0.
-              </p>
-              <ul class="work__list">
-                <li>C++</li>
-                <li>SFML</li>
-                <li>Collision detection</li>
-                <li>Ball physics</li>
-                <li>Scoreboard UI</li>
-              </ul>
+          <button class="project-card" type="button" data-project="horror-circus">
+            <img src="./images/project2GameJam.png" class="project-card__image" alt="Horror Circus gameplay preview" />
+            <span class="project-card__tag">Unreal Engine / Game Jam</span>
+            <h3>Horror Circus</h3>
+            <p>A 5-day team game jam project where I worked as a gameplay programmer.</p>
+            <span class="project-card__cta">View case study &rarr;</span>
+          </button>
 
-              <div class="work__links">
-                <a href="https://github.com/Wantonsoup/SFMLprojectPONG" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Wantonsoup/SFMLprojectPONG" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project1Pong.gif" class="work__image" alt="Project 1" />
-            </div>
-          </div>
+          <button class="project-card" type="button" data-project="stealth-game">
+            <img src="./images/project3_FPS.png" class="project-card__image" alt="First-person stealth game preview" />
+            <span class="project-card__tag">Unreal Engine 5 / C++</span>
+            <h3>First-Person Stealth Game</h3>
+            <p>An Unreal Engine stealth prototype featuring AI perception and stealth mechanics.</p>
+            <span class="project-card__cta">View case study &rarr;</span>
+          </button>
 
-          <!-- End of project1 -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Horror Circus</h3>
-              <p>
-                Game Jam (Team of 7): Role: Gameplay Programmer
-              </p>
-              <ul class="work__list">
-                <li>Game Jame Duration: 5 days</li>
-                <li>Unreal Engine</li>
-                <li>Hybrid Workflow (Blueprints + C++)</li>
-                <li>Supported team programmers with debugging and problem-solving</li>
-                <li>Contributed on gameplay mechanics & debugging  (Simon Says, issues with levels)</li>
-                <li>Git for version control</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://github.com/Lewis-Craven/GameJam2.1" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Lewis-Craven/GameJam2.1" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project2GameJam.png" class="work__image" alt="Project 2" />
-              <img src="./images/project2SimonSays.gif" class="work__image" alt="Project 2" />
-            </div>
-          </div>
-
-          <!-- End of project2 -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>First-Person Stealth game</h3>
-              <p>
-                First-Person game made using Unreal Engine 5 and C++.
-              </p>
-              <ul class="work__list">
-                <li>Unreal Engine</li>
-                <li>Hybrid Workflow (Blueprints + C++)</li>
-                <li>Complex AI system (Perception, EQS, behaviour trees)</li>
-                <li>Stealth mechanics (Crouching, hiding, noise generation, takedown)</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://github.com/Wantonsoup/FPS_Assignment" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Wantonsoup/FPS_Assignment">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project3_FPS.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-
-          <!-- End of project3 -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Project 3</h3>
-              <p>
-                Java Libary Management System.
-              </p>
-              <ul class="work__list">
-                <li>Java</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://github.com/Wantonsoup/Libary-management-Java" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Wantonsoup/Libary-management-Java" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project4Java.png" class="work__image" alt="Project 4" />
-            </div>
-          </div>
-
-          <!-- End of project4 -->
-
+          <button class="project-card" type="button" data-project="library-management">
+            <img src="./images/project4Java.png" class="project-card__image" alt="Library Management System preview" />
+            <span class="project-card__tag">Java</span>
+            <h3>Library Management System</h3>
+            <p>A Java application for managing books and library records.</p>
+            <span class="project-card__cta">View case study &rarr;</span>
+          </button>
         </div>
       </div>
     </section>
@@ -237,7 +151,7 @@
           like to get in touch, please feel free to send me an email.
         </p>
         <!-- Replace the email with yours -->
-        <a href="lucaswan934@gmail.com" class="btn">lucaswan934@gmail.com</a>
+        <a href="mailto:lucaswan934@gmail.com" class="btn">lucaswan934@gmail.com</a>
       </div>
     </div>
   </section>
@@ -259,7 +173,7 @@
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/lucas-wan-b803b62b9/ title="Link to Linkedin Profile">
+          <a href="https://www.linkedin.com/in/lucas-wan-b803b62b9/" title="Link to Linkedin Profile" target="_blank">
             <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
           </a>
         </li>
@@ -268,6 +182,42 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
+
+
+  <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="project-modal__overlay" data-close-modal></div>
+    <article class="project-modal__content" tabindex="-1">
+      <button class="project-modal__close" type="button" aria-label="Close project details" data-close-modal>&times;</button>
+      <div class="project-modal__media" id="project-modal-media"></div>
+      <div class="project-modal__body">
+        <p class="project-modal__eyebrow" id="project-modal-tech"></p>
+        <h2 id="project-modal-title"></h2>
+
+        <div class="project-modal__section">
+          <h3>Introduction</h3>
+          <p id="project-modal-intro"></p>
+        </div>
+
+        <div class="project-modal__section">
+          <h3>Features</h3>
+          <ul id="project-modal-features"></ul>
+        </div>
+
+        <div class="project-modal__section">
+          <h3>Responsibilities</h3>
+          <ul id="project-modal-responsibilities"></ul>
+        </div>
+
+        <div class="project-modal__section">
+          <h3>What I Learned</h3>
+          <ul id="project-modal-learned"></ul>
+        </div>
+
+        <div class="project-modal__links" id="project-modal-links"></div>
+      </div>
+    </article>
+  </div>
+
   <script src="./index.js"></script>
 </body>
 
