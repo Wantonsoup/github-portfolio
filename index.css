@@ -374,7 +374,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__items {
-    gap: var(--gutter-medium);
+    gap: var(--gutter-normal);
+    flex-wrap: wrap;
 }
 
 .nav__item:not(:last-child) {
@@ -449,7 +450,8 @@ body:not(.user-is-tabbing) a:focus {
     }
 
     .nav__items {
-        gap: var(--gutter-normal);
+        gap: var(--gutter-small);
+        justify-content: center;
     }
 
     .nav__social-image {
@@ -601,30 +603,47 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .about__content {
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: var(--gutter-medium);
     align-items: center;
+}
+
+.about__photo-container {
+    width: 260px;
+    height: 260px;
+    margin: 0;
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #111;
+}
+
+.about__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.about__text {
+    max-width: 700px;
+}
+
+.about__text .btn {
+    margin-top: var(--gutter-small);
 }
 
 @media(max-width: 900px) {
     .about__content {
-        flex-direction: column-reverse;
-        align-items: initial;
+        grid-template-columns: 1fr;
+        gap: var(--gutter-normal);
     }
-}
 
-.about__photo-container {
-    margin-bottom: var(--gutter-normal);
-}
-
-@media(min-width: 901px) {
-    .about__text {
-        flex: 0 0 35%;
-    }
-    
     .about__photo-container {
-        flex: 1;
-        margin: 0 var(--gutter-huge) 0 0;
+        width: 220px;
+        height: 220px;
     }
 }
 
@@ -636,40 +655,10 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
 }
 
-.contact__form {
-    display: grid;
-    gap: 1.6rem;
-    margin-top: var(--gutter-normal);
-}
 
-.contact__label {
-    font-family: 'Jost', sans-serif;
-    color: var(--white);
-    line-height: 1;
-}
 
-.contact__input,
-.contact__textarea {
-    width: 100%;
-    padding: 1.4rem 1.6rem;
-    border: 1px solid rgb(36, 35, 35);
-    background: #080808;
-    color: var(--white-1);
-    font: inherit;
-    resize: vertical;
-}
 
-.contact__input:focus,
-.contact__textarea:focus {
-    outline: 2px solid var(--pink);
-    border-color: var(--pink);
-}
 
-.contact__submit {
-    justify-self: start;
-    cursor: pointer;
-    font: inherit;
-}
 
 /* --------------------------------------- */
 /* ----- Footer ----- */
@@ -767,7 +756,7 @@ body:not(.user-is-tabbing) a:focus {
 .project-modal {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 2000;
     display: none;
     padding: var(--gutter-normal);
 }
@@ -784,7 +773,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .project-modal__content {
     position: relative;
-    text-align: left;
     max-width: 1050px;
     max-height: calc(100vh - 6rem);
     margin: 0 auto;
@@ -792,13 +780,14 @@ body:not(.user-is-tabbing) a:focus {
     background: #080808;
     border: 1px solid var(--pink);
     box-shadow: 0 3rem 8rem rgba(0, 0, 0, .6);
+    text-align: left;
 }
 
 .project-modal__close {
     position: sticky;
     top: 1rem;
     float: right;
-    z-index: 2;
+    z-index: 5;
     width: 4.4rem;
     height: 4.4rem;
     margin: 1rem;
@@ -809,18 +798,25 @@ body:not(.user-is-tabbing) a:focus {
     cursor: pointer;
 }
 
+.project-modal__media {
+    clear: both;
+    background: #111;
+}
+
 .project-modal__media img,
 .project-modal__media iframe {
     display: block;
     width: 100%;
+    max-height: 420px;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    object-fit: contain;
     border: 0;
     background: #111;
 }
 
 .project-modal__body {
     padding: var(--gutter-medium);
+    text-align: left;
 }
 
 .project-modal__eyebrow {

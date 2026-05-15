@@ -45,6 +45,7 @@
             <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
             <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
             <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="./images/CV_WAN.pdf" class="nav__link" target="_blank" rel="noopener noreferrer">Resume</a></li>
           </ul>
         </nav>
 
@@ -136,8 +137,11 @@
       <div class="row">
         <h2>About Me</h2>
         <div class="about__content">
+          <div class="about__photo-container">
+            <img class="about__photo" src="./images/me.jpg" alt="Portrait of Lucas Wan" />
+          </div>
+
           <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
             <p>
               I am a Computer Science with Games Programming student at the
               University of Huddersfield. I have a passion for game development
@@ -145,13 +149,7 @@
               looking for a placement that will help me gain experience in the
               games industry.
             </p>
-            <!-- Provide a link to your resume -->
-            <a href="./images/CV_WAN.pdf" class="btn" target ="_blank">My Resume</a>
-          </div>
-
-          <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/me.jpg" alt="" />
+            <a href="./images/CV_WAN.pdf" class="btn" target="_blank" rel="noopener noreferrer">My Resume</a>
           </div>
         </div>
       </div>
@@ -166,27 +164,9 @@
       <div class="contact__info">
         <p>
           I am currently looking for a placement opportunity. If you would
-          like to get in touch, please send me a message using the form below.
+          like to get in touch, please feel free to send me an email.
         </p>
-
-        <!--
-          This form uses Formspree so messages can be sent to your email from a static website.
-          Replace YOUR_FORM_ID with your real Formspree form ID after creating a form at formspree.io.
-        -->
-        <form class="contact__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="hidden" name="_subject" value="New portfolio message from Lucas Wan website">
-
-          <label class="contact__label" for="name">Name</label>
-          <input class="contact__input" type="text" id="name" name="name" placeholder="Your name" required>
-
-          <label class="contact__label" for="email">Email</label>
-          <input class="contact__input" type="email" id="email" name="email" placeholder="your.email@example.com" required>
-
-          <label class="contact__label" for="message">Message</label>
-          <textarea class="contact__textarea" id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-
-          <button class="btn btn--pink contact__submit" type="submit">Send Message</button>
-        </form>
+        <a href="mailto:lucaswan934@gmail.com" class="btn btn--pink">Email Me</a>
       </div>
     </div>
   </section>
