@@ -108,6 +108,13 @@ body {
 section {
     padding: var(--gutter-huge) 0;
     border-bottom: var(--border-light);
+    scroll-margin-top: 9rem;
+}
+
+@media(max-width: 700px) {
+    section {
+        scroll-margin-top: 13rem;
+    }
 }
 
 img {
@@ -335,37 +342,43 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Navigation ----- */
 /* --------------------------------------- */
 
-.nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: var(--gutter-normal) 0;
+.site-header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .88);
+    backdrop-filter: blur(12px);
+    border-bottom: var(--border-light);
 }
 
-.nav__items {
+.nav__row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gutter-normal);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 1.4rem 0;
+}
+
+.nav__items,
+.nav__social-links {
+    display: flex;
+    align-items: center;
     list-style: none;
 }
 
+.nav__items {
+    gap: var(--gutter-medium);
+}
+
 .nav__item:not(:last-child) {
-    margin-right: var(--gutter-medium);
-}
-
-@media(max-width: 500px) {
-    .nav {
-        justify-content: center;
-    }
-}
-
-@media(max-width: 400px) {
-    .nav__item:not(:last-child) {
-        margin-right: var(--gutter-normal);
-    }
-}
-
-@media(max-width: 300px) {
-    .nav {
-        font-size: var(--font-size-small);
-    }
+    margin-right: 0;
 }
 
 .nav__link {
@@ -397,6 +410,58 @@ body:not(.user-is-tabbing) a:focus {
     right: 0;
     height: 2px;
     background: var(--pink);
+}
+
+.nav__social-links {
+    gap: 1.6rem;
+}
+
+.nav__social-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__social-image {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: contain;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.nav__social-item a:hover .nav__social-image,
+.nav__social-item a:focus .nav__social-image {
+    transform: translateY(-.2rem) scale(1.08);
+    opacity: .85;
+}
+
+@media(max-width: 700px) {
+    .nav__row {
+        flex-direction: column;
+        justify-content: center;
+        gap: .4rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    .nav__items {
+        gap: var(--gutter-normal);
+    }
+
+    .nav__social-image {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .nav__items {
+        gap: var(--gutter-small);
+    }
 }
 
 /* --------------------------------------- */
@@ -571,6 +636,41 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
 }
 
+.contact__form {
+    display: grid;
+    gap: 1.6rem;
+    margin-top: var(--gutter-normal);
+}
+
+.contact__label {
+    font-family: 'Jost', sans-serif;
+    color: var(--white);
+    line-height: 1;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid rgb(36, 35, 35);
+    background: #080808;
+    color: var(--white-1);
+    font: inherit;
+    resize: vertical;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    outline: 2px solid var(--pink);
+    border-color: var(--pink);
+}
+
+.contact__submit {
+    justify-self: start;
+    cursor: pointer;
+    font: inherit;
+}
+
 /* --------------------------------------- */
 /* ----- Footer ----- */
 /* --------------------------------------- */
@@ -580,30 +680,9 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-medium) 0 var(--gutter-normal);
 }
 
-.footer__social-links {
-    display: flex;
-    justify-content: center;
-    padding: var(--gutter-normal) 0;
-    list-style: none;
-}
-
-.footer__social-link-item:not(:last-of-type) {
-    margin-right: var(--gutter-small);
-}
-
-.footer__social-image {
-    height: 4rem;
-}
-
-.footer__github-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.footer__github-buttons iframe {
-    height: 2.5rem;
-    width: 84px;
-    transform: translateY(3px);
+.footer__text {
+    margin: 0;
+    color: var(--white-1);
 }
 
 @media(max-width: 500px) {
@@ -611,7 +690,6 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-medium) 0;
     } 
 }
-
 
 /* --------------------------------------- */
 /* ----- Project Grid and Modal ----- */
@@ -706,6 +784,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .project-modal__content {
     position: relative;
+    text-align: left;
     max-width: 1050px;
     max-height: calc(100vh - 6rem);
     margin: 0 auto;
