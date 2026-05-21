@@ -1,4 +1,22 @@
 /* -----------------------------------------
+  Loading screen
+ ---------------------------------------- */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  if (!loader) return;
+
+  setTimeout(() => {
+    loader.classList.add("loader--hidden");
+  }, 1800);
+
+  setTimeout(() => {
+    loader.remove();
+  }, 3200);
+});
+
+/* -----------------------------------------
   Have focus outline only for keyboard users 
  ---------------------------------------- */
 
@@ -77,7 +95,7 @@ const projectDetails = {
   },
   "horror-circus": {
     title: "Horror Circus",
-    tech: "Unreal Engine / Blueprints / C++ / Team Game Jam",
+    tech: "Unreal Engine / Blueprints / C++ /Game Jam",
     media: { type: "image", src: "./images/project2SimonSays.gif", alt: "Horror Circus gameplay demo" },
     introduction: "A 5-day game jam project created by a team of 7. I worked as a gameplay programmer, helping build mechanics, solve bugs, and support the team during a short production deadline.",
     features: [
@@ -155,6 +173,107 @@ const projectDetails = {
     links: [
       { label: "View Source Code", href: "https://github.com/Wantonsoup/Libary-management-Java" }
     ]
+  },
+  "real-time-engine": {
+    title: "Real-Time Engine",
+    tech: "C++ / DirectX 11",
+    media: { type: "image", src: "./images/project5_RealTime.png", alt: "Real-Time Engine preview" },
+    video: { type: "youtube", src: "https://www.youtube.com/embed/TZVsBlPRazc" },
+    introduction: "A custom real-time rendering engine built from scratch using C++ and DirectX 11.",
+    features: [
+      "Real-time 3D rendering capabilities",
+      "Basic lighting and shading models",
+      "Scene management and object rendering",
+      "PBR materials and basic post-processing effects",
+      "User input for camera control and scene interaction",
+      "OBJ model and texture loading",
+      "GPU instancing for efficient rendering of multiple objects",
+      "FPS counter and frustum culling for performance optimization"
+    ],
+    responsibilities: [
+      "Designed and implemented the core rendering pipeline",
+      "Implemented support for basic lighting and shading models",
+      "Built scene management and object rendering systems",
+      "Implemented support for PBR materials and basic post-processing effects",
+      "Implemented user input handling for camera control and scene interaction",
+      "Implemented support for loading OBJ models and textures for rendering",
+      "Implemented GPU instancing for efficient rendering of multiple objects",
+      "Implemented an FPS counter and frustum culling for performance optimization"
+    ],
+    learned: [
+      "Gained a deeper understanding of real-time rendering concepts and techniques",
+      "Improved my C++ programming skills and familiarity with DirectX 11",
+      "Learned how to design and implement a basic rendering engine from scratch",
+      "Gained experience with performance optimization techniques for real-time applications"
+    ],
+    links: [
+      { label: "View Source Code", href: "https://github.com/Wantonsoup/GraphicProgEngine" }
+    ]
+  },
+  "pub-crawl": {
+    title: "Pub Crawl",
+    tech: "C++ / Unreal Engine 5.6 / Blueprints / Game Jam",
+    media: { type: "image", src: "./images/project6_PubCrawl.png", alt: "Pub Crawl preview" },
+    video: { type: "youtube", src: "https://www.youtube.com/embed/_NWVSbVefsA" },
+    introduction: "Pub Crawl is a comedy rage-game about staying on your feet after a night out. The player must make it back to their house before the drinking catches up to them in 2 minutes, fighting for control over their own legs.",
+    features: [
+      "Drunk man 3rd person gameplay with physics mechanics",
+      "Navigation and interaction with a pub environment",
+      "Low poly art style and humorous tone",
+      "Created a custom character controller using a sphere to simulate drunken movement and physics interactions",
+      "Team-built gameplay systems using Unreal Engine"
+    ],
+    responsibilities: [
+      "Designed the core gameplay loop and mechanics",
+      "Implemented the main character movement and physics interactions by using a sphere",
+      "Worked on the navigation and interaction systems",
+      "Supported other programmers with problem-solving and debugging",
+      "Used Git for team version control and coordinated with artists and designers to ensure smooth integration of assets and mechanics",
+      "Led the production process, helping to manage scope and ensure we met our game jam deadline"
+    ],
+    learned: [
+      "Learned how to work effectively under game jam time pressure",
+      "Improved communication and coordination with artists, designers, and programmers",
+      "Gained more experience designing and implementing physics-based gameplay mechanics in Unreal Engine",
+      "Learned how to lead a small team and manage scope during a short development cycle",
+      
+    ],
+    links: [
+      { label: "View Source Code", href: "https://github.com/Wantonsoup/wobblyworker" }
+    ]
+  },
+  "portfolio": {
+    title: "Portfolio Website",
+    tech: "HTML / CSS / JavaScript / AI assistance",
+    media: { type: "image", src: "./images/project7_Portfolio.png", alt: "Portfolio Website preview" },
+    introduction: "This is my personal portfolio website, showcasing my projects and skills as a game programmer. First project on HTML, CSS, and JavaScript with AI design assistance, built to create a professional online presence and share my work with potential employers.",
+    features: [
+      "Responsive design for desktop and mobile",
+      "Fixed navigation bar with smooth scrolling",
+      "Interactive project cards with modal popups for details",
+      "CSS animations, transitions, gradients, and hover effects for visual polish",
+      "AI-assisted design and content creation for a more professional presentation"
+    ],
+    responsibilities: [
+      "Designed the overall layout and structure of the website",
+      "Implemented the responsive design using HTML and CSS",
+      "Built the interactive project cards and modal popup functionality using JavaScript",
+      "Added CSS animations, transitions, gradients, and hover effects for visual polish",
+      "Tested the website on different screen sizes and devices to ensure a good user experience",
+      "Used AI to teach and assist with design choices, content creation, and code structure to create a more polished and professional portfolio website"
+    ],
+    learned: [
+      "Structured a responsive website using HTML, CSS, and JavaScript",
+      "Created a fixed navigation bar for better user experience",
+      "Built interactive project cards and modal popups",
+      "Used CSS animations, transitions, gradients, and hover effects",
+      "Made a website more mobile-friendly",
+      "Presented game programming projects clearly and professionally",
+      "Understood how small design choices affect readability, usability, and first impressions"
+    ],
+    links: [
+      { label: "View Source Code", href: "https://github.com/Wantonsoup/github-portfolio" }
+    ]
   }
 };
 
@@ -179,9 +298,28 @@ const openProjectModal = (projectId) => {
   document.querySelector("#project-modal-learned").innerHTML = createListItems(project.learned);
 
   const mediaContainer = document.querySelector("#project-modal-media");
-  mediaContainer.innerHTML = project.media.type === "video"
-    ? `<iframe src="${project.media.src}" title="${project.title} video demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-    : `<img src="${project.media.src}" alt="${project.media.alt}" />`;
+
+  if (project.video?.type === "youtube") {
+    mediaContainer.innerHTML = `
+      <iframe
+        src="${project.video.src}"
+        title="${project.title} video demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    `;
+  } else if (project.media.type === "video") {
+    mediaContainer.innerHTML = `
+      <video controls muted playsinline class="project-modal__video">
+        <source src="${project.media.src}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `;
+  } else {
+    mediaContainer.innerHTML = `
+      <img src="${project.media.src}" alt="${project.media.alt}" />
+    `;
+  }
 
   document.querySelector("#project-modal-links").innerHTML = project.links
     .map((link) => `<a class="btn" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`)
